@@ -13,16 +13,21 @@
             background-color: #ecf0f1; /* Light blue digital color */
             text-align: center;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header, footer {
             background-color: #000; /* Black */
             color: #fff;
             padding: 20px;
+            flex-shrink: 0;
         }
 
         main {
             padding: 20px;
+            flex-grow: 1;
         }
 
         .login-container {
@@ -52,7 +57,7 @@
         button {
             background-color: #3498db;
             color: #fff;
-            padding: 10px;
+            padding: 12px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -70,6 +75,13 @@
         a:hover {
             text-decoration: underline;
         }
+
+        footer {
+            margin-top: auto;
+        }
+
+        /* Add your existing styles below this comment */
+        /* Replace this comment with your actual styles */
     </style>
 </head>
 <body>
@@ -87,7 +99,7 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
-            <button onclick="login()"><a href="main.html">Login</a></button>
+            <button onclick="login()">Login</button>
 
             <p>or</p>
             
@@ -106,6 +118,7 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
         // Your web app's Firebase configuration
         const firebaseConfig = {
@@ -121,16 +134,43 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
+
+        // Get the Firebase Auth instance
+        const auth = getAuth();
+
+        // Function to sign in with Google
+        function signInWithGoogle() {
+            const provider = new GoogleAuthProvider();
+
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    const user = result.user;
+                    console.log('Successfully signed in with Google:', user);
+                    // Redirect or perform other actions after successful Google sign-in
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error('Google Sign-In failed:', errorCode, errorMessage);
+                    // Display an error message to the user
+                });
+        }
     </script>
 
     <script>
         // Your existing script for login functions
         function login() {
-            // (Your login function)
-        }
+            // Check if the form is filled before redirecting
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-        function signInWithGoogle() {
-            // (Your Google sign-in function)
+            if (email && password) {
+                // Redirect only if the form is filled
+                window.location.href = "main.html";
+            } else {
+                // Show an error or alert indicating that the form must be filled
+                console.error("Please fill in the login form.");
+            }
         }
     </script>
 
