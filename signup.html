@@ -13,16 +13,21 @@
             background-color: #ecf0f1; /* Light blue digital color */
             text-align: center;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header, footer {
             background-color: #000; /* Black */
             color: #fff;
             padding: 20px;
+            flex-shrink: 0;
         }
 
         main {
             padding: 20px;
+            flex-grow: 1;
         }
 
         .signup-container {
@@ -52,7 +57,7 @@
         button {
             background-color: #3498db;
             color: #fff;
-            padding: 10px;
+            padding: 12px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -70,6 +75,13 @@
         a:hover {
             text-decoration: underline;
         }
+
+        footer {
+            margin-top: auto;
+        }
+
+        /* Add your existing styles below this comment */
+        /* Replace this comment with your actual styles */
     </style>
 </head>
 <body>
@@ -87,7 +99,7 @@
             <label for="signup-password">Password:</label>
             <input type="password" id="signup-password" name="signup-password" required>
 
-            <button onclick="signup()"><a href="main.html">Sign Up</a></button>
+            <button onclick="signup()">Sign Up</button>
 
             <p>Already have an account? <a href="login.html">Sign in here</a>.</p>
         </div>
@@ -127,21 +139,27 @@
             const email = document.getElementById('signup-email').value;
             const password = document.getElementById('signup-password').value;
 
-            // Use Firebase Authentication API to handle sign up
-            firebase.auth().createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Successfully signed up
-                    const user = userCredential.user;
-                    console.log('Successfully signed up:', user);
-                    // Redirect or perform other actions after successful signup
-                })
-                .catch((error) => {
-                    // Handle errors
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    console.error('Sign up failed:', errorCode, errorMessage);
-                    // Display an error message to the user
-                });
+            // Check if the form is filled before redirecting
+            if (email && password) {
+                // Use Firebase Authentication API to handle sign up
+                firebase.auth().createUserWithEmailAndPassword(email, password)
+                    .then((userCredential) => {
+                        // Successfully signed up
+                        const user = userCredential.user;
+                        console.log('Successfully signed up:', user);
+                        // Redirect or perform other actions after successful signup
+                    })
+                    .catch((error) => {
+                        // Handle errors
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.error('Sign up failed:', errorCode, errorMessage);
+                        // Display an error message to the user
+                    });
+            } else {
+                // Show an error or alert indicating that the form must be filled
+                console.error("Please fill in the signup form.");
+            }
         }
     </script>
 
