@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUIN_READER - Welcome</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ecf0f1; /* Light blue digital color */
+            text-align: center;
+            color: #333;
+        }
+
+        header, footer {
+            background-color: #000; /* Black */
+            color: #fff;
+            padding: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .welcome-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AYUIN Ebook Library</h1>
+    </header>
+
+    <main>
+        <div class="welcome-container">
+            <h2>Welcome to AYUIN Ebook Library</h2>
+            <p>Explore a vast collection of ebooks and enhance your reading experience.</p>
+
+            <p>
+                <button onclick="redirectToLogin()">Login</button>
+                <button onclick="redirectToSignup()">Sign Up</button>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AYUIN_READER. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function redirectToLogin() {
+            // Redirect to your login page
+            window.location.href = "login.html";
+        }
+
+        function redirectToSignup() {
+            // Redirect to your signup page
+            window.location.href = "signup.html";
+        }
+    </script>
+
+</body>
+</html>
 
