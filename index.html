@@ -1,159 +1,110 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safesite - Your Safety Online</title>
+    <title>AYUIN_READER</title>
     <style>
-        /* Your styles here */
-
         body {
-            font-family: Arial, sans-serif;
-            background-color: #3498db; /* Blue background */
-            color: #ffffff; /* White text */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        header {
-            background-color: #2980b9; /* Dark blue header background */
-            color: #ffffff; /* White header text */
+            box-sizing: border-box;
+            background-color: #ecf0f1; /* Light blue digital color */
             text-align: center;
-            padding: 10px;
+            color: #333;
         }
 
-        nav {
-            background-color: #2980b9; /* Dark blue navigation background */
-            color: #ffffff; /* White navigation text */
-            padding: 10px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav li {
-            margin: 0 20px;
-        }
-
-        a {
-            color: #ffffff; /* White link text */
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        section {
+        header, footer {
+            background-color: #000; /* Black */
+            color: #fff;
             padding: 20px;
-            text-align: center;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
         }
 
-        footer {
-            background-color: #2980b9; /* Dark blue footer background */
-            color: #ffffff; /* White footer text */
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        main {
+            padding: 20px;
+        }
+
+        .ebook {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            display: inline-block;
+            max-width: 400px;
+            text-align: left;
         }
 
         h2 {
-            color: #ffffff; /* White header text */
-        }
-
-        h3 {
-            color: #ffffff; /* White header text */
+            color: #3498db;
         }
 
         p {
-            line-height: 1.6;
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        ul li {
             margin-bottom: 10px;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
+        a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Welcome to Safesite</h1>
+        <h1>AYUIN Ebook Library</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <section>
-        <h2>Cyber Crime and Your Safety</h2>
 
-        <img src="rt123.webp" alt="Cyber Security Image">
-        <h3>Cyber Crimes Against Individuals</h3>
-        <p>Cyber criminals often target individuals for various malicious purposes, including identity theft, online scams, and harassment. It's crucial for individuals to be aware of potential threats and take measures to protect their personal information.</p>
+    <main>
+        <div class="ebook">
+            <h2>Think and Grow Rich</h2>
+            <p>Author: Napoleon Hill</p>
+            <p>Summary: This classic book teaches the secrets to personal success and wealth. It emphasizes the power of positive thinking and the development of a definite purpose.</p>
+            <a href="think_and_grow_rich.pdf" download>Download</a>
+        </div>
 
-        <img src="cyber.jpg" alt="Cyber Security Image">
-        <h3>Cyber Crimes Against Property</h3>
-        <p>Property-related cyber crimes involve attacks on digital assets, such as unauthorized access to sensitive data, intellectual property theft, and ransomware attacks. Safeguarding digital properties is essential for businesses and individuals alike.</p>
+        <div class="ebook">
+            <h2>1984</h2>
+            <p>Author: George Orwell</p>
+            <p>Summary: "1984" is a dystopian novel that explores themes of totalitarianism, surveillance, and the consequences of an oppressive government.</p>
+            <a href="big_brother.pdf" download>Download</a>
+        </div>
 
-        <img src="rt2.avif" alt="Cyber Security Image">
-        <h3>Cyber Crimes Against Organizations</h3>
-        <p>Organizations face significant threats from cyber criminals seeking to compromise sensitive information, disrupt operations, or extort money. Implementing robust cybersecurity measures is vital for protecting organizational data and maintaining a secure digital environment.</p>
+        <div class="ebook">
+            <h2>War and Peace</h2>
+            <p>Author: Leo Tolstoy</p>
+            <p>Summary: This epic novel explores the impact of the Napoleonic Wars on Russian society. It is known for its complex characters and detailed depiction of historical events.</p>
+            <a href="war_and_peace.pdf" download>Download</a>
+        </div>
 
-        <img src="inter.png" alt="Internet Safety Image">
-        <h3>Types of Cyber Crimes</h3>
-        <ul>
-            <li><strong>Phishing:</strong> Deceptive attempts to obtain sensitive information, such as passwords or credit card details.</li>
-            <li><strong>Malware:</strong> Malicious software designed to harm or exploit computer systems.</li>
-            <li><strong>Hacking:</strong> Unauthorized access to computer systems or networks.</li>
-            <li><strong>Ransomware:</strong> Encrypting files or systems and demanding payment for their release.</li>
-            <li><strong>Identity Theft:</strong> Stealing personal information for fraudulent activities.</li>
-            <li><strong>Social Engineering:</strong> Manipulating individuals to disclose confidential information.</li>
-            <li><strong>Cyber Espionage:</strong> Covertly gathering sensitive information for political or economic gain.</li>
-            <!-- Add more types as needed -->
-        </ul>
+        <div class="ebook">
+            <h2>History of China</h2>
+            <p>Author: Morris Rossabi</p>
+            <p>Summary: A comprehensive overview of the history of China, covering ancient civilizations, dynasties, cultural developments, and modern events.</p>
+            <a href="history_of_china.pdf" download>Download</a>
+        </div>
 
-        <img src="rt1.png" alt="Internet Safety Image">
-        <h3>Precautions to Maintain Safety Over the Internet</h3>
-        <ul>
-            <li>Keep software and operating systems up-to-date with the latest security patches.</li>
-            <li>Use strong, unique passwords for online accounts and enable two-factor authentication when available.</li>
-            <li>Be cautious of unsolicited emails, messages, or links; verify the legitimacy before clicking.</li>
-            <li>Install reputable antivirus and anti-malware software.</li>
-            <li>Regularly back up important data to a secure location.</li>
-            <li>Educate yourself on common cyber threats and stay informed about cybersecurity best practices.</li>
-        </ul>
+        <div class="ebook">
+            <h2>History of Soviet Union: Rise and Fall</h2>
+            <p>Author: Dr. Randi Cox</p>
+            <p>Summary: An in-depth exploration of the rise and fall of the Soviet Union, examining political, economic, and social aspects of one of the 20th century's major powers.</p>
+            <a href="history_of_soviet_union.pdf" download>Download</a>
+        </div>
+    </main>
 
-        <p>Understanding these threats and taking preventive measures is essential for maintaining safety over the internet. Safesite is here to provide valuable information and tools to enhance your online safety.</p>
-    </section>
     <footer>
-        <p>&copy; 2024 Safesite. All rights reserved. | Contact us: info@safesite.com</p>
+        <p>&copy; 2024 AYUIN_READER. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
